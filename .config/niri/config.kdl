@@ -256,7 +256,11 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
-spawn-at-startup "swaybg -i ~/Pictures/wallpapers/wallpaper.jpg"
+spawn-at-startup "alacritty"
+spawn-at-startup "swaybg" "-i" "/home/libri/Pictures/wallpapers/wallpaper.jpg"
+//spawn-at-startup "wpa_cli" "enable_network" "0"
+spawn-at-startup "pipewire"
+
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.

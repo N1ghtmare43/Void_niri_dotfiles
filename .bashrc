@@ -14,5 +14,5 @@ export MOZ_ENABLE_WAYLAND=1
 
 TTY=$(tty)
 if [ "$TTY" = "/dev/tty1" ]; then
-    exec niri --session
+	exec dbus-run-session niri
 fi
