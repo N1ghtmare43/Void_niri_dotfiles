@@ -1,0 +1,11 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/carbonfox.toml"
+]
+
+[window]
+padding = {x = 20, y = 20}
+decorations = "None"
+
+[terminal]
+shell = "fish"
