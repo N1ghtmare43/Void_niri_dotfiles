@@ -17,3 +17,6 @@
 sudo xbps-install -S starship zoxide fzf
 ```
 
+## Nvidia
+
+Обязательно добавить в ядро параметр `ndidia-drm.modeset=1`, без этого драйвера работать не будут
