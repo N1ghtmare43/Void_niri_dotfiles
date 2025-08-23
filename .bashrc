@@ -10,9 +10,24 @@ export QT_QPA_PLATFORM=wayland
 export SDL_VIDEODRIVER=wayland
 export ELM_DISPLAY=wl
 export MOZ_ENABLE_WAYLAND=1
+export XDG_SESSION_TYPE=wayland
 
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+case ":$PATH:" in
+    *:/home/libri/.juliaup/bin:*)
+        ;;
+
+    *)
+        export PATH=/home/libri/.juliaup/bin${PATH:+:${PATH}}
+        ;;
+esac
+
+# <<< juliaup initialize <<<
 
 TTY=$(tty)
 if [ "$TTY" = "/dev/tty1" ]; then
-	exec dbus-run-session niri
+        exec dbus-run-session -- niri
 fi

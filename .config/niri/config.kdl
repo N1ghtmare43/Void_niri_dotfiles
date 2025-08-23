@@ -260,6 +260,7 @@ spawn-at-startup "alacritty"
 spawn-at-startup "swaybg" "-i" "/home/libri/Pictures/wallpapers/wallpaper.jpg"
 //spawn-at-startup "wpa_cli" "enable_network" "0"
 spawn-at-startup "pipewire"
+spawn-at-startup "mako"
 
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -360,6 +361,8 @@ binds {
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    XF86MonBrightnessDown { spawn "brightnessctl" "s" "10%-"; }
+    XF86MonBrightnessUp   { spawn "brightnessctl" "s" "10%+"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
@@ -525,8 +528,10 @@ binds {
 
     // Consume one window from the right to the bottom of the focused column.
     Mod+Comma  { consume-window-into-column; }
+    Mod+H  { consume-window-into-column; }
     // Expel the bottom window from the focused column to the right.
     Mod+Period { expel-window-from-column; }
+    Mod+semicolon { expel-window-from-column; }
 
     Mod+R { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
